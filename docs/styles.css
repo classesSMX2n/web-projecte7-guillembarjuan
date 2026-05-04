@@ -1,0 +1,456 @@
+/* Variables de color extretes del logo i la temàtica */
+:root {
+    --primary-blue: #1b4b74;
+    --primary-green: #68a94a;
+    --light-bg: #f8f9fa;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --border-color: #dddddd;
+    --cookie-banner-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* Reset bàsic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--text-light);
+    position: relative; /* Per al banner de cookies fixed */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navegació */
+header {
+    background-color: var(--text-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    height: 60px; /* Ajusta segons necessitat */
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-green);
+}
+
+/* Botons globals */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: #558c3c;
+}
+
+.btn-secondary {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #123350;
+}
+
+/* Seccions globals */
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+/* ========== MODIFICACIÓ 1: Millora del contrast a Hero ========== */
+.hero {
+    /* Abans: background-image: url('images/hero-bg.jpg'); */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 120px 20px;
+    border-bottom: 5px solid var(--primary-green);
+    color: var(--text-light);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); /* reforçat */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: var(--text-light);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7); /* reforçat */
+}
+/* =============================================================== */
+
+/* Serveis */
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--text-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary-green);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+/* Sobre Nosaltres */
+.about {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.about h2 {
+    color: var(--text-light);
+}
+
+.company-data {
+    list-style: none;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.company-data li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Contacte (amb privacitat) */
+.contact {
+    background-color: var(--light-bg);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--text-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary-green);
+}
+
+.privacy-acceptance {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.privacy-acceptance input {
+    width: auto;
+    margin-top: 5px;
+}
+
+.privacy-acceptance label {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0;
+}
+
+.privacy-acceptance label a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+/* Banner de Cookies (nou) */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cookie-banner-bg);
+    color: var(--text-dark);
+    padding: 20px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cookie-banner.hidden {
+    transform: translateY(100%);
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    max-width: 800px;
+}
+
+.cookie-content p a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-cookie-accept {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+}
+
+.btn-cookie-accept:hover {
+    background-color: #558c3c;
+}
+
+.btn-cookie-reject {
+    background-color: var(--text-light);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.btn-cookie-reject:hover {
+    background-color: #e6f0f7;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    padding-bottom: 80px; /* Afegim padding per al banner de cookies */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- ESTILS PER A LES PÀGINES LEGALS (T06) --- */
+.legal-page {
+    padding: 60px 20px;
+    background-color: var(--text-light);
+}
+
+.legal-page h1 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.legal-content h2 {
+    color: var(--primary-green);
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.legal-content p, .legal-content ul {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.legal-content ul {
+    padding-left: 20px;
+}
+
+.legal-content li {
+    margin-bottom: 8px;
+}
+
+/* Enllaços legals al footer */
+.legal-links {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.legal-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: var(--primary-green);
+}
+
+/* ========== MODIFICACIÓ 2: Enllaços subratllats (millora accessibilitat) ========== */
+/* Tots els enllaços, per defecte, han de tenir subratllat */
+a {
+    text-decoration: underline;
+}
+
+/* Els botons no han de tenir subratllat (són elements interactius amb estil propi) */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-cookie-accept,
+.btn-cookie-reject {
+    text-decoration: none;
+}
+
+/* Enllaços del menú de navegació: mantenim subratllat només en :hover? 
+   Però per a accessibilitat, els deixem subratllats sempre que no siguin botons */
+.nav-links a {
+    text-decoration: underline;
+}
+
+/* Enllaços dins del footer legal */
+.legal-links a {
+    text-decoration: underline;
+}
+
+/* Enllaços del peu de pàgina general */
+footer a {
+    text-decoration: underline;
+    color: #dddddd;
+}
+footer a:hover {
+    color: var(--primary-green);
+}
+/* =================================================================== */
+
+/* ========== MODIFICACIÓ 3: Indicador de focus visible per a navegació amb teclat ========== */
+/* Per a qualsevol element interactiu */
+:focus {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 2px;
+}
+
+/* Per a botons i enllaços, un estil addicional */
+button:focus-visible,
+a:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 2px;
+    background-color: rgba(104, 169, 74, 0.1); /* lleuger fons verdós */
+}
+
+/* Opció per als inputs del formulari */
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 2px;
+}
+/* ==================================================================================== */
